@@ -10,7 +10,8 @@
     | 方法 | 描述 |
     | ---- | ---- |
     | clearCanvas(context: CanvasRenderingContext2D) | 清空 canvas |
-    | isCanvasBlank(canvas: HTMLCanvasElement) | canvas 是否为空 |
-    | useCanvasPainting(canvas: HTMLCanvasElement): { context: CanvasRenderingContext2D } | 创建画布并返回 context |
+    | isCanvasBlank(canvas: HTMLCanvasElement): Boolean | canvas 是否为空 |
+    | useCanvasPainting(canvas: HTMLCanvasElement): { context: CanvasRenderingContext2D } | 初始化画布引擎并返回 context |
 -   demo
+
     ![展示](./demo.gif)
