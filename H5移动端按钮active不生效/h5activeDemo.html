@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1,viewport-fit=cover"
+        />
+        <title>h5Active</title>
+    </head>
+    <style>
+        html,
+        body {
+            width: 100%;
+            margin: 0;
+        }
+        .btn {
+            width: 80%;
+            margin: 20px auto;
+            background: linear-gradient(90deg, #00a4ff 0%, #197dff 100%);
+            height: 44px;
+            line-height: 44px;
+            color: #fff;
+            font-size: 17px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
+        }
+        .btn:active {
+            background: #0081de;
+        }
+    </style>
+    <!-- 1. body 增加 ontouchstart -->
+    <body ontouchstart="">
+        <div class="btn">按钮</div>
+        <!-- 2. 或者用以下方式均可 -->
+        <script>
+            document.body.addEventListener("touchstart", function () {});
+        </script>
+    </body>
+</html>

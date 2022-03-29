@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1,viewport-fit=cover"
+        />
+        <title>SignatureDemo</title>
+    </head>
+    <style>
+        html,
+        body {
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        #canvas_wrap {
+            margin: 16px;
+            border: 1px dashed #666;
+            box-sizing: border-box;
+        }
+
+        .flex_row_center {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+    </style>
+    <body>
+        <canvas id="canvas_wrap"></canvas>
+        <div class="flex_row_center">
+            <button onclick="onClearCanvasClick()">清空</button> <button onclick="onExportCanvasClick()">导出</button>
+        </div>
+        <img id="display_img" src="" alt="" />
+    </body>
+    <script src="./canvas.util.js"></script>
+    <script>
+        var canvas = document.getElementById("canvas_wrap");
+        const { context } = useCanvasPainting(canvas);
+
+        function onClearCanvasClick() {
+            if (isCanvasBlank(canvas)) {
+                alert("还没有画东西哦");
+                return;
+            }
+            clearCanvas(context);
+        }
+        function onExportCanvasClick() {
+            if (isCanvasBlank(canvas)) {
+                alert("还没有画东西哦");
+                return;
+            }
+            let dataurl = canvas.toDataURL();
+            let img = document.getElementById("display_img");
+            img.src = dataurl;
+        }
+    </script>
+</html>
