@@ -1,7 +1,4 @@
----
-theme: geek-black
-highlight: a11y-dark
----
+# Vue-KeepAlive灵活清除缓存
 
 ## 需求
 
