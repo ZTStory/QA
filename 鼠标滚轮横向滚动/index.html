@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>鼠标滚轮横向滚动</title>
+        <style>
+            .viewport {
+                float: right;
+                width: 400px;
+                height: 350px;
+                overflow-x: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="viewport">
+            <div style="width: 2000px; height: 100%; background: linear-gradient(to right, red, white 100%)"></div>
+        </div>
+        <script>
+            let div = document.querySelector(".viewport");
+            div.onwheel = function (e) {
+                e.preventDefault();
+                // MDN Element 滚动事件： https://developer.mozilla.org/zh-CN/docs/Web/API/Element/wheel_event#%E6%A6%82%E8%A6%81
+                let left = -e.wheelDelta || e.deltaY / 2;
+                div.scrollLeft += left;
+            };
+        </script>
+    </body>
+</html>
